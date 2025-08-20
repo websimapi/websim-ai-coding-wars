@@ -1,0 +1,68 @@
+{
+  "database": {
+    "schema": {
+      "user_profile": {
+        "id": {
+          "type": "text",
+          "description": "User ID from websim"
+        },
+        "username": {
+          "type": "text",
+          "description": "Username from websim"
+        },
+        "claims": {
+          "type": "integer",
+          "description": "Number of chunks claimed"
+        },
+        "wins": {
+          "type": "integer",
+          "description": "Number of battles won"
+        },
+        "losses": {
+          "type": "integer",
+          "description": "Number of battles lost"
+        },
+        "ai_code": {
+          "type": "text",
+          "description": "AI code for controlling units"
+        },
+        "last_activity": {
+          "type": "timestamptz",
+          "description": "Last time the AI was run"
+        }
+      },
+      "world_chunks": {
+        "id": {
+          "type": "text",
+          "description": "Chunk coordinates as x,y string"
+        },
+        "x": {
+          "type": "integer",
+          "description": "X coordinate"
+        },
+        "y": {
+          "type": "integer",
+          "description": "Y coordinate"
+        },
+        "owner": {
+          "type": "text",
+          "description": "User ID of chunk owner"
+        },
+        "units": {
+          "type": "jsonb",
+          "description": "Array of unit objects"
+        },
+        "resources": {
+          "type": "integer",
+          "description": "Available resources in chunk"
+        },
+        "timestamp": {
+          "type": "timestamptz",
+          "description": "Last update time"
+        }
+      }
+    },
+    "instructions": "AI coding wars - users write JavaScript to control units. Use user_profile for player stats and world_chunks for the persistent world. Units are stored as JSON arrays in chunks."
+  }
+}
+
